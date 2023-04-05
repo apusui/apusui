@@ -1,24 +1,34 @@
 {
-  "name": "wc-material-ui",
-  "version": "1.0.0",
+  "name": "apusui",
+  "private": true,
+  "version": "0.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "sb:dev": "storybook dev -p 6006",
-    "sb:build": "storybook build"
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apusui/wc-material-ui.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Ivan Guevara",
+    "url": "https://github.com/thebug404"
+  },
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apusui/wc-material-ui/issues"
+  },
+  "homepage": "https://github.com/apusui/wc-material-ui#readme",
+  "scripts": {
+    "bootstrap": "lerna run bootstrap",
+    "sb:dev": "npm run sb:dev -w packages/material",
+    "sb:build": "npm run sb:build -w packages/material"
+  },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.2",
-    "@storybook/addon-links": "^7.0.2",
-    "@storybook/blocks": "^7.0.2",
-    "@storybook/web-components": "^7.0.2",
-    "@storybook/web-components-vite": "^7.0.2",
-    "lit": "^2.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "storybook": "^7.0.2"
-  }
+    "@types/node": "18.15.11",
+    "lerna": "6.6.1",
+    "typescript": "5.0.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

@@ -1,0 +1,29 @@
+{
+  "name": "@apusui/material",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sb:dev": "storybook dev -p 6006",
+    "sb:build": "storybook build -o dist"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Ivan Zaldivar",
+    "url": "https://github.com/thebug404"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "lit": "2.7.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "7.0.2",
+    "@storybook/addon-links": "7.0.2",
+    "@storybook/blocks": "7.0.2",
+    "@storybook/web-components": "7.0.2",
+    "@storybook/web-components-vite": "7.0.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "storybook": "7.0.2"
+  }
+}
