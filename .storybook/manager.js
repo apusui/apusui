@@ -5,7 +5,7 @@ addons.setConfig({
   showNav: true,
   showPanel: true,
   panelPosition: 'bottom',
-  enableShortcuts: true,
+  enableShortcuts: false,
   showToolbar: true,
   theme: undefined,
   selectedPanel: undefined,
