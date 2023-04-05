@@ -1,32 +1,41 @@
-import { html } from 'lit';
+import { html } from 'lit'
+
 import './TextField'
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/web-components/writing-stories/introduction
 export default {
   title: 'Example/TextFields',
   tags: ['autodocs'],
-  render: ({ label, hint, placeholder, color }: any) => {
+  render: ({ appearance, color, clearable, label, hint, placeholder }: any) => {
     return html`
-      <wc-text-field-outlined
+      <wc-text-field
+        appearance=${appearance}
+        color=${color}
+        ?clearable=${clearable}
         label=${label}
         hint=${hint}
         placeholder=${placeholder}
-        color=${color}
-      ></wc-text-field-outlined>
+      ></wc-text-field>
     `
   },
   argTypes: {
+    appearance: {
+      control: 'inline-radio',
+      options: ['regular', 'outlined', 'filled']
+    },
+    color: { control: 'text' },
+    clearable: { control: 'boolean' },
     label: { control: 'text' },
     name: { control: 'text' },
     hint: { control: 'text' },
     placeholder: { control: 'text' },
-    color: { control: 'text' }
   }
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/7.0/web-components/writing-stories/args
 export const Primary = {
   args: {
+    appearance: 'outlined',
     label: 'Your landing page',
     hint: 'www.domain.com/home'
   }
