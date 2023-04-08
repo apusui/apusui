@@ -3,7 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 
 import '../assets/styles.css'
 
-import { generateUniqueKey, getColor } from '../utils';
+import { generateUniqueKey, getColor } from '../utils'
 
 import '../Icon/Icon'
 
@@ -28,6 +28,7 @@ export class TextField extends LitElement {
       --text-field-focus-label-color: var(--blue-darken-2);
     }
 
+    /* Outlined */
     :host([appearance="outlined"]) .text-field {
       height: 80px;
     }
@@ -106,14 +107,88 @@ export class TextField extends LitElement {
       transition: all .2s;
     }
 
-    /* 
-      The rule is added when:
+    /* Regular */
+    :host([appearance="regular"]) .text-field {
+      height: auto;
+    }
 
-      - The .text-field _content element has a hover & .text-field__input is not empty.
-      - The .text-field__input is focused & .text-field__input is not empty
-     */
-    :host([appearance="outlined"]) .text-field__content:hover .text-field__input:not(:placeholder-shown) ~ .text-field__clearable,
-    :host([appearance="outlined"]) .text-field__input:focus:not(:placeholder-shown) ~ .text-field__clearable {
+    :host([appearance="regular"]) .text-field__wrapper {
+      height: 100%;
+    }
+
+    :host([appearance="regular"]) .text-field__content {
+      position: relative;
+      min-height: 35px;
+      border-bottom: 1px solid var(--text-field-border-color);
+      display: flex;
+      align-items: center;
+      border-radius: 0px;
+      padding: 0px;
+    }
+
+    :host([appearance="regular"]) .text-field__label {
+      position: absolute;
+      font-size: 16px;
+      user-select: none;
+      transition: all 0.2s;
+      transform: translateY(-50%);
+      color: var(--text-field-label-color);
+      top: 50%;
+    }
+
+    :host([appearance="regular"]) .text-field__input {
+      max-height: 32px;
+      width: 100%;
+      background: transparent;
+      border-style: none;
+      outline: none;
+      font-size: 16px;
+      caret-color: var(--text-field-caret-color);
+      color: rgba(0, 0, 0, .87);
+    }
+
+    :host([appearance="regular"]) .text-field__input::placeholder {
+      opacity: 0;
+      transition: all 0.1s;
+    }
+
+    :host([appearance="regular"]) .text-field__input:focus::placeholder {
+      opacity: 1;
+    }
+
+    :host([appearance="regular"]) .text-field__input:focus + .text-field__label {
+      color: var(--text-field-focus-label-color);
+    }
+
+    :host([appearance="regular"]) .text-field__input:focus + .text-field__label,
+    :host([appearance="regular"]) .text-field__input:not(:placeholder-shown) + .text-field__label {
+      top: 0%;
+      font-size: 12px;
+      background-color: white;
+      padding: 0px 3px;
+    }
+
+    :host([appearance="regular"]) .text-field__content:focus-within {
+      border-bottom: 2px solid var(--text-field-focus-border-color);
+    }
+
+    :host([appearance="regular"]) .text-field__details {
+      padding: 5px 0px;
+    }
+
+    :host([appearance="regular"]) .text-field__text {
+      font-size: 12px;
+      color: var(--text-field-message-color);
+    }
+
+    :host([appearance="regular"]) .text-field__clearable {
+      opacity: 0;
+      transition: all .2s;
+    }
+
+    /* General styles. */
+    .text-field__content:hover .text-field__input:not(:placeholder-shown) ~ .text-field__clearable,
+    .text-field__input:focus:not(:placeholder-shown) ~ .text-field__clearable {
       opacity: 1;
     }
   `

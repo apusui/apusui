@@ -32,8 +32,15 @@ export default {
   }
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/7.0/web-components/writing-stories/args
-export const Primary = {
+export const Regular = {
+  args: {
+    appearance: 'regular',
+    label: 'Fullname',
+    hint: 'Example: Ivan Zaldivar'
+  }
+}
+
+export const Outlined = {
   args: {
     appearance: 'outlined',
     label: 'Your landing page',
