@@ -6,7 +6,7 @@ import './TextField'
 export default {
   title: 'Example/TextFields',
   tags: ['autodocs'],
-  render: ({ appearance, color, clearable, label, hint, placeholder }: any) => {
+  render: ({ appearance, color, clearable, label, hint, placeholder, rounded }: any) => {
     return html`
       <wc-text-field
         appearance=${appearance}
@@ -15,6 +15,7 @@ export default {
         label=${label}
         hint=${hint}
         placeholder=${placeholder}
+        ?rounded=${rounded}
       ></wc-text-field>
     `
   },
@@ -29,6 +30,7 @@ export default {
     name: { control: 'text' },
     hint: { control: 'text' },
     placeholder: { control: 'text' },
+    rounded: { control: 'boolean' }
   }
 };
 

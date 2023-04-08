@@ -107,6 +107,13 @@ export class TextField extends LitElement {
       transition: all .2s;
     }
 
+    :host([appearance="outlined"][rounded]) .text-field__content,
+    :host([appearance="outlined"][rounded]) .text-field__details {
+      border-radius: 50rem;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
     /* Regular */
     :host([appearance="regular"]) .text-field {
       height: auto;
@@ -267,6 +274,14 @@ export class TextField extends LitElement {
       transition: all .2s;
     }
 
+    :host([appearance="filled"][rounded]) .text-field__content,
+    :host([appearance="filled"][rounded]) .text-field__details {
+      border-radius: 50rem;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: 0px;
+    }
+
     /* General styles. */
     .text-field__content:hover .text-field__input:not(:placeholder-shown) ~ .text-field__clearable,
     .text-field__input:focus:not(:placeholder-shown) ~ .text-field__clearable {
@@ -294,6 +309,9 @@ export class TextField extends LitElement {
 
   @property({ type: String, reflect: true })
     placeholder: string | null = null
+
+  @property({ type: Boolean, reflect: true })
+    rounded: boolean = false
 
   @state()
   private uniqueID: string = generateUniqueKey()
