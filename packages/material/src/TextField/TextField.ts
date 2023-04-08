@@ -186,6 +186,87 @@ export class TextField extends LitElement {
       transition: all .2s;
     }
 
+    /* Filled */
+    :host([appearance="filled"]) .text-field {
+      height: auto;
+    }
+
+    :host([appearance="filled"]) .text-field__wrapper {
+      height: 100%;
+    }
+
+    :host([appearance="filled"]) .text-field__content {
+      position: relative;
+      min-height: 56px;
+      border-bottom: 1px solid var(--text-field-border-color);
+      background: rgba(0, 0, 0, .06);
+      border-radius: 5px 5px 0px 0px;
+      display: flex;
+      align-items: end;
+      padding: 0px 10px;
+    }
+
+    :host([appearance="filled"]) .text-field__label {
+      position: absolute;
+      font-size: 16px;
+      user-select: none;
+      transition: all 0.2s;
+      transform: translateY(-50%);
+      color: var(--text-field-label-color);
+      background: transparent;
+      top: 50%;
+    }
+
+    :host([appearance="filled"]) .text-field__input {
+      max-height: 32px;
+      width: 100%;
+      background: transparent;
+      border-style: none;
+      outline: none;
+      font-size: 16px;
+      caret-color: var(--text-field-caret-color);
+      color: rgba(0, 0, 0, .87);
+      margin-bottom: 7px;
+    }
+
+    :host([appearance="filled"]) .text-field__input::placeholder {
+      opacity: 0;
+      transition: all 0.1s;
+    }
+
+    :host([appearance="filled"]) .text-field__input:focus::placeholder {
+      opacity: 1;
+    }
+
+    :host([appearance="filled"]) .text-field__input:focus + .text-field__label {
+      color: var(--text-field-focus-label-color);
+    }
+
+    :host([appearance="filled"]) .text-field__input:focus + .text-field__label,
+    :host([appearance="filled"]) .text-field__input:not(:placeholder-shown) + .text-field__label {
+      top:30%;
+      font-size: 12px;
+      padding: 0px 3px;
+    }
+
+    :host([appearance="filled"]) .text-field__content:focus-within {
+      border-bottom: 2px solid var(--text-field-focus-border-color);
+    }
+
+    :host([appearance="filled"]) .text-field__details {
+      padding: 5px 10px;
+    }
+
+    :host([appearance="filled"]) .text-field__text {
+      font-size: 12px;
+      color: var(--text-field-message-color);
+    }
+
+    :host([appearance="filled"]) .text-field__clearable {
+      opacity: 0;
+      transition: all .2s;
+    }
+
     /* General styles. */
     .text-field__content:hover .text-field__input:not(:placeholder-shown) ~ .text-field__clearable,
     .text-field__input:focus:not(:placeholder-shown) ~ .text-field__clearable {

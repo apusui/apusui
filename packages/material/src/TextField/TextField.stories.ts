@@ -47,3 +47,11 @@ export const Outlined = {
     hint: 'www.domain.com/home'
   }
 }
+
+export const Filled = {
+  args: {
+    appearance: 'filled',
+    label: 'Address',
+    hint: '1367 East Kent Ave N'
+  }
+}
