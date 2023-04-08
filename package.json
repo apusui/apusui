@@ -20,6 +20,9 @@
   "homepage": "https://github.com/apusui/wc-material-ui#readme",
   "scripts": {
     "bootstrap": "lerna run bootstrap",
+    "docs:dev": "npm run docs:dev -w apps/docs",
+    "docs:build": "npm run docs:build -w apps/docs",
+    "docs:preview": "npm run docs:preview -w apps/docs",
     "sb:dev": "npm run sb:dev -w packages/material",
     "sb:build": "npm run sb:build -w packages/material"
   },
