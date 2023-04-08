@@ -296,13 +296,20 @@ export class TextField extends LitElement {
     placeholder: string | null = null
 
   @state()
-    uniqueID: string = generateUniqueKey()
+  private uniqueID: string = generateUniqueKey()
 
-  private _onClearable (): void {
+  /**
+   * Clears the value of the input field and gives it focus.
+   * 
+   * @method
+   * @member {TextField}
+   * @returns {void}
+   */
+  clear (): void {
     if (!this.$input) return
-    
+
     this.$input.focus()
-    
+
     this.$input.value = ''
   }
 
@@ -336,7 +343,7 @@ export class TextField extends LitElement {
             <label for=${this.uniqueID} class="text-field__label">${this.label}</label>
 
             <!-- Clerable -->
-            ${ this.clearable ? html`<wc-icon class="text-field__clearable" @click=${this._onClearable}>cancel</wc-icon>` : null }
+            ${ this.clearable ? html`<wc-icon class="text-field__clearable" @click=${() => this.clear()}>cancel</wc-icon>` : null }
           </div>
 
           <!-- Messages -->
