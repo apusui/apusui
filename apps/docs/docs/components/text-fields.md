@@ -1,4 +1,4 @@
-# Text fields
+# Text fields <Badge type="info" text="In development..." />
 
 The `TextField` component is a user-editable text field. It will be used for the user to enter data that the application can read. It is a component equivalent to `<input>`. However, the `TextField` component has many features, such as **validations**, **error messages**, and a nicer **appearance**.
 
